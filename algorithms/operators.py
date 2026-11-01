@@ -111,7 +111,7 @@ def get_neighbors(state: State, problem: CommuteProblem) -> List[State]:
     last = len(path) - 1
     for i in range(last):
         for j in range(i + 1, min(last, i + SEGMENT_LEN) + 1):
-            keep = set(path[:i]) | set(path[j + 1:])   # nodes the new piece must not touch
+            keep = set(path[:i]) | set(path[j + 1:])  
             for piece in detours(problem, path[i], path[j], keep, DETOUR_LEN):
                 if piece != path[i:j + 1]:
                     candidates.append(State(path[:i] + piece + path[j + 1:], t))
