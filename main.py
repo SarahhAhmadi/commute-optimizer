@@ -57,6 +57,7 @@ def execute_solver(name: str, solver_cls, config_params: dict, problem: CommuteP
     start_wall = time.perf_counter()
     best_state, best_cost = solver.solve()
     runtime = time.perf_counter() - start_wall
+    print(f"   Steps to best    : {solver.best_step} / {len(solver.history) - 1}")
     return best_state, best_cost, runtime, solver.history
 
 

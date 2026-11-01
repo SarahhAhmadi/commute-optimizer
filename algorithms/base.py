@@ -14,7 +14,8 @@ class LocalSearchSolver(ABC):
         self.problem = problem
         self.params: Dict[str, Any] = kwargs
         self.history: List[float] = []
-        self.rng = random.Random(kwargs.get("seed"))
+        # seeded from the global generator, so `main.py --seed` makes runs repeatable
+        self.rng = random.Random(kwargs.get("seed", random.getrandbits(64)))
 
         self.best_state: Optional[State] = None
         self.best_cost: float = math.inf

@@ -12,19 +12,22 @@
   },
   "simulated_annealing": {
     "initial_temp": 120.0,
-    "cooling_rate": 0.992,
+    "cooling_rate": 0.999,
     "min_temp": 0.001,
     "max_iterations": 3000
   },
   "beam_search": {
     "beam_width": 8,
-    "max_iterations": 150
+    "max_iterations": 150,
+    "same_route_limit": 2,
+    "patience": 10
   },
   "genetic_algorithm": {
     "population_size": 50,
     "generations": 120,
     "crossover_rate": 0.85,
     "mutation_rate": 0.25,
-    "elitism": 3
+    "elitism": 3,
+    "tournament_size": 3
   }
 }
